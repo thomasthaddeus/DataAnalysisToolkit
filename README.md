@@ -1,5 +1,7 @@
 # DataAnalyzer
 
+[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml)
+
 DataAnalyzer is a Python-based data analysis tool designed to streamline various data analysis tasks. It provides the ability to load data from CSV files, perform statistical calculations, detect outliers, clean data, and visualize data.
 
 ## Features
