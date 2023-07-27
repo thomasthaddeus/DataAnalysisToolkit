@@ -1,8 +1,8 @@
 # DataAnalyzer
 
-[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml)
+[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml)
 
-DataAnalyzer is a Python-based data analysis tool designed to streamline various data analysis tasks. It provides the ability to load data from CSV files, perform statistical calculations, detect outliers, clean data, and visualize data.
+DataAnalysisToolkit is a Python-based data analysis tool designed to streamline various data analysis tasks. It provides the ability to load data from CSV files, perform statistical calculations, detect outliers, clean data, and visualize data.
 
 ## Features
 
@@ -30,10 +30,10 @@ This tool is highly beneficial for data analysts and data scientists, offering t
 ## Usage
 
 ```python
-from data_analyzer import DataAnalyzer
+from data_analyzer import DataAnalyToolkit
 
 # Initialize the analyzer with the path to a CSV file
-analyzer = DataAnalyzer('path_to_your_file.csv')
+analyzer = DataAnalysisToolkit('path_to_your_file.csv')
 
 # Calculate the mean, median, mode, and trimmed mean of a column
 statistics = analyzer.calculate_budget_statistics('column_name')
@@ -64,10 +64,10 @@ analyzer.export_data('new_file.csv')
 
 ## Installation
 
-To install `DataAnalyzer`, you can use pip:
+To install `DataAnalysisToolkit`, you can use pip:
 
 ```python
-pip install dataanalyzer
+pip install dataanalysistoolkit
 ```
 
 ## License
