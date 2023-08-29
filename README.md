@@ -30,10 +30,10 @@ This tool is highly beneficial for data analysts and data scientists, offering t
 ## Usage
 
 ```python
-from data_analyzer import DataAnalyToolkit
+from data_analyzer import DataAnalysisToolkit
 
 # Initialize the analyzer with the path to a CSV file
-analyzer = DataAnalysisToolkit('path_to_your_file.csv')
+analyzer = DataAnalysisToolkit('sample.csv')
 
 # Calculate the mean, median, mode, and trimmed mean of a column
 statistics = analyzer.calculate_budget_statistics('column_name')
@@ -69,6 +69,10 @@ To install `DataAnalysisToolkit`, you can use pip:
 ```python
 pip install dataanalysistoolkit
 ```
+
+## Contributing
+
+
 
 ## License
 
