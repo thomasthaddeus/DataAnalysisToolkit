@@ -1,4 +1,4 @@
-# DataAnalyzer
+# Data Analysis Toolkit
 
 [![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml)
 
@@ -72,7 +72,7 @@ pip install dataanalysistoolkit
 
 ## Contributing
 
-
+[Contributing]()
 
 ## License
 
