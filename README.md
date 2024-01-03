@@ -1,6 +1,6 @@
 # Data Analysis Toolkit
 
-[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml)
+[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg)](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml)
 
 DataAnalysisToolkit is a comprehensive Python package offering a suite of tools designed for efficient data analysis. This toolkit simplifies tasks such as loading CSV data, performing statistical analysis, cleaning data, and visualizing results. It's an ideal tool for data analysts, scientists, and anyone looking to dive into data exploration and machine learning.
 

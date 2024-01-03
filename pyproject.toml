@@ -19,6 +19,3 @@ requires-python = ">=3.8"
 
 [project.urls]
 homepage = "https://github.com/thomasthaddeus/dataanalysistoolkit"
-
-[tool.setuptools.dynamic]
-long-description-content-type = "text/markdown"
