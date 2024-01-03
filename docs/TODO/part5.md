@@ -1,3 +1,5 @@
+# Part 5: Automated Data Quality Checks
+
 Implementing features for automated data quality checks, specifically focusing on detecting inconsistencies, anomalies, and biases in datasets, involves a series of methodical steps. Here's a detailed TODO list to guide the development of this feature in the DataAnalysisToolkit:
 
 1. **Research and Conceptual Framework**:

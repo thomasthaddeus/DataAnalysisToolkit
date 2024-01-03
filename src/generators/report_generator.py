@@ -10,6 +10,11 @@ pandas DataFrames, suitable for presenting to stakeholders. It includes
 functionalities for automatically generating descriptive statistics,
 histograms, scatter plots, box plots, and allows for custom written analyses or
 notes to be included.
+
+# Example usage
+data = pd.read_csv('your_data.csv')
+report_gen = ReportGenerator(data)
+report_gen.generate_html_report('data_report.html', custom_text='Your custom analysis here.')
 """
 
 import base64
@@ -118,9 +123,3 @@ class ReportGenerator:
         html_content = f"<html><head><title>Data Report</title></head><body>{''.join(report_sections)}</body></html>"
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(html_content)
-
-
-# Example usage
-# data = pd.read_csv('your_data.csv')
-# report_gen = ReportGenerator(data)
-# report_gen.generate_html_report('data_report.html', custom_text='Your custom analysis here.')

@@ -9,6 +9,10 @@ of data, each containing a mix of random integer, float, date, time, money, and
 text values. This is especially useful in scenarios where real data is not
 available for testing or development purposes. The class allows for the
 customization of the number of rows and the output file name.
+
+# Usage
+generator = CSVDataGenerator("data/gen_test.csv")
+generator.generate_csv()
 """
 
 import csv
@@ -171,8 +175,3 @@ class CSVDataGenerator:
                         self.maybe_null(self.random_money()),
                     ]
                 )
-
-
-# Usage
-generator = CSVDataGenerator("data/gen_test.csv")
-generator.generate_csv()

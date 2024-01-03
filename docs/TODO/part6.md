@@ -1,3 +1,5 @@
+# Part 6: Interactive Dashboards and Reporting
+
 To implement functionalities for creating interactive dashboards and automated reports in the DataAnalysisToolkit, which are crucial for visualizing data insights and sharing them with non-technical stakeholders, the following TODO list should be followed:
 
 1. **Research and Requirements Analysis**:

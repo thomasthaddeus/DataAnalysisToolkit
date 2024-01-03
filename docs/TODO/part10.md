@@ -1,3 +1,5 @@
+# Part 10: User-friendly GUI
+
 Developing a user-friendly Graphical User Interface (GUI) for the DataAnalysisToolkit, to make it accessible to users who are not comfortable with coding, involves a series of detailed steps. Here's a comprehensive TODO list for this development:
 
 1. **Research and User Experience Design**:

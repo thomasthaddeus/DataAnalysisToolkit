@@ -8,10 +8,19 @@ DataImputer is a comprehensive utility for dealing with missing values,
 essential in data preparation for analysis and machine learning. It now
 supports saving and loading imputer models for consistency in imputation
 processes.
+
+# Example usage
+data = pd.read_csv('your_data.csv')
+imputer = DataImputer(data)
+imputer.mean_imputation(['col1', 'col2'])
+report = imputer.generate_imputation_report()
+imputer.save_imputer_model('imputer.pkl')
+# ... Later or in another script ...
+imputer.load_imputer_model('imputer.pkl')
 """
 
-from sklearn.impute import SimpleImputer
 import pickle
+from sklearn.impute import SimpleImputer
 import pandas as pd
 
 class DataImputer:
@@ -150,13 +159,3 @@ class DataImputer:
             self.imputers = pickle.load(file)
             for col, imputer in self.imputers.items():
                 self.data[col] = imputer.transform(self.data[[col]])
-
-
-# Example usage
-# data = pd.read_csv('your_data.csv')
-# imputer = DataImputer(data)
-# imputer.mean_imputation(['col1', 'col2'])
-# report = imputer.generate_imputation_report()
-# imputer.save_imputer_model('imputer.pkl')
-# ... Later or in another script ...
-# imputer.load_imputer_model('imputer.pkl')
