@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dataanalysistoolkit"
-version = "1.0.0"
+version = "1.0.1"
 description = "The `DataAnalysisToolkit` project is a Python-based data analysis tool designed to streamline various data analysis tasks. It allows users to load data from CSV files and perform operations such as statistical calculations, outlier detection, data cleaning, and visualization."
 authors = [
     { name = "Thaddeus Thomas", email = "thaddeus.r.thomas@gmail.com" }
