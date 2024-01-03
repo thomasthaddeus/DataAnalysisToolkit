@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataanalysistoolkit"
+version = "1.0.0"
+description = "The `DataAnalysisToolkit` project is a Python-based data analysis tool designed to streamline various data analysis tasks. It allows users to load data from CSV files and perform operations such as statistical calculations, outlier detection, data cleaning, and visualization."
+authors = [
+    { name = "Thaddeus Thomas", email = "thaddeus.r.thomas@gmail.com" }
+]
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = ">=3.8"
+
+[project.urls]
+homepage = "https://github.com/thomasthaddeus/dataanalysistoolkit"
+
+[tool.setuptools.dynamic]
+long-description-content-type = "text/markdown"

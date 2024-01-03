@@ -1,19 +1,34 @@
 """test_data_analyzer.py
-_summary_
+Summary:
+    This script contains tests for the DataAnalysisToolkit class, which is used
+    for various data analysis tasks such as calculating statistics, detecting
+    outliers, handling missing values, dropping duplicates, encoding categorical
+    features, and splitting data into training and testing sets.
 
-_extended_summary_
+Extended Summary:
+    Each function in this script is a test that asserts the correctness of a
+    corresponding method in the DataAnalysisToolkit class. The tests are written
+    using the pytest framework, and can be run using the `pytest` command in the
+    terminal.
 
 Returns:
-    _type_: _description_
+    None: The script does not return anything but prints the test results to the
+    terminal. If all tests pass, it means that the DataAnalysisToolkit class is
+    functioning as expected.
+
+Raises:
+    AssertionError: If a test fails, an AssertionError is raised with a message
+    indicating which test failed and why.
 """
 
 import pytest
-from data_analyzer import DataAnalyzer
+import pandas as pd
+from src.data_analysis_toolkit import DataAnalysisToolkit
 
 
 @pytest.fixture
 def analyzer():
-    return DataAnalyzer("path_to_your_test_file.csv")
+    return DataAnalysisToolkit("../data/test.csv")
 
 
 def test_calculate_budget_statistics(analyzer):

@@ -1,39 +1,38 @@
-# DataAnalyzer
+# DataAnalysisToolkit
 
-[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalyzer/actions/workflows/python-publish.yml)
+[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml)
 
-DataAnalysisToolkit is a Python-based data analysis tool designed to streamline various data analysis tasks. It provides the ability to load data from CSV files, perform statistical calculations, detect outliers, clean data, and visualize data.
+DataAnalysisToolkit is a comprehensive Python package offering a suite of tools designed for efficient data analysis. This toolkit simplifies tasks such as loading CSV data, performing statistical analysis, cleaning data, and visualizing results. It's an ideal tool for data analysts, scientists, and anyone looking to dive into data exploration and machine learning.
 
 ## Features
 
-- Load data from CSV files
-- Calculate statistics (mean, median, mode, and trimmed mean) for a specified column
-- Detect outliers in a specified column using the z-score method
-- Handle missing values (either by dropping or filling them)
-- Drop duplicate rows from the DataFrame
-- Encode categorical features in the DataFrame
-- Split the data into training and testing sets for machine learning tasks
-- Plot a histogram for a specified column
-- Export the cleaned and processed data to a new CSV file
+- **Data Loading**: Load data directly from CSV files into a Python environment.
+- **Statistical Analysis**: Perform calculations like mean, median, mode, and trimmed mean.
+- **Outlier Detection**: Identify outliers using the z-score method.
+- **Data Cleaning**: Handle missing values, drop duplicates, and encode categorical data.
+- **Data Splitting**: Easily split data into training and testing sets for machine learning models.
+- **Data Visualization**: Create histograms and other plots to explore data visually.
+- **Data Export**: Export cleaned and processed data back into CSV format.
 
-## Key Features
+## Enhanced Functionalities
 
-1. **Statistical Calculations**: It provides easy methods to calculate common statistics like mean, median, mode, and trimmed mean of any given column in the data.
-2. **Outlier Detection**: It contains methods to identify outliers in the data using the z-score method.
-3. **Data Cleaning**: It offers functionalities to handle missing values (either by dropping or filling them), drop duplicate rows, and encode categorical features.
-4. **Data Splitting**: It includes a method to split the data into training and testing sets, which is often required in machine learning tasks.
-5. **Visualization**: It provides the ability to plot histograms of any column in the data, aiding in visual data analysis.
-6. **Data Export**: It allows users to export the analyzed data to a new CSV file.
+- **Advanced Visualization**: Utilize a dedicated visualizer for creating a variety of insightful data plots.
+- **Feature Engineering**: Enhance your data with new, informative features.
+- **Model Evaluation**: Assess the performance of machine learning models.
+- **Report Generation**: Automatically generate comprehensive HTML reports with summaries and visualizations.
+- **Data Imputation**: Implement advanced imputation techniques to handle missing data.
 
-This tool is highly beneficial for data analysts and data scientists, offering them a simplified interface for conducting preliminary data analysis. It can also be incorporated into larger data processing pipelines, serving as a preprocessing step for machine learning models.
+This toolkit is an asset for conducting preliminary data analysis, and it seamlessly integrates into larger data processing workflows.
 
-## Usage
+## Getting Started
+
+Here's how you can get started with DataAnalysisToolkit:
 
 ```python
-from data_analyzer import DataAnalyToolkit
+from data_analysis_toolkit import DataAnalysisToolkit
 
 # Initialize the analyzer with the path to a CSV file
-analyzer = DataAnalysisToolkit('path_to_your_file.csv')
+analyzer = DataAnalysisToolkit('../data/test.csv')
 
 # Calculate the mean, median, mode, and trimmed mean of a column
 statistics = analyzer.calculate_budget_statistics('column_name')
@@ -64,12 +63,24 @@ analyzer.export_data('new_file.csv')
 
 ## Installation
 
-To install `DataAnalysisToolkit`, you can use pip:
+Install DataAnalysisToolkit using pip:
 
-```python
+```bash
 pip install dataanalysistoolkit
 ```
 
+## Documentation
+
+For detailed documentation, examples, and usage guides, please visit [DataAnalysisToolkit Documentation](https://github.com/thomasthaddeus/DataAnalysisToolkit/wiki).
+
+## Contributions
+
+Contributions are welcome! For guidelines on how to contribute, please refer to our [Contribution Guide](https://github.com/thomasthaddeus/DataAnalysisToolkit/CONTRIBUTING.md).
+
 ## License
 
-This project is licensed under the terms of the [MIT license](./License).
+DataAnalysisToolkit is open-sourced under the MIT License. For more details, see the [LICENSE](./LICENSE) file.
+
+---
+
+Developed with ❤ by the DataAnalysisToolkit Team.

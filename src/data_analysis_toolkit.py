@@ -19,21 +19,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""data_analyzer.py
+"""data_analysis_toolkit.py
 
-This module contains a class, DataAnalyzer, for performing various data
-analysis tasks on a CSV file.
-
-The class is able to load data, calculate various statistics, detect outliers,
-handle missing values, drop duplicates,encode categorical features, split data
-into training and testing sets, and plot data.
+This module contains a class, DataAnalysisToolkit, for performing various data
+analysis tasks on a CSV file. The class is able to load data, calculate various
+statistics, detect outliers, handle missing values, drop duplicates, encode
+categorical features, split data into training and testing sets, visualize data,
+generate reports, preprocess data, and impute missing values.
 
 Example usage:
 
-    from data_analyzer import DataAnalyzer
+    from data_analysis_toolkit import DataAnalysisToolkit
 
     # Initialize the analyzer with the path to a CSV file.
-    analyzer = DataAnalyzer('path_to_your_file.csv')
+    analyzer = DataAnalysisToolkit('path_to_your_file.csv')
 
     # Calculate the mean, median, mode, and trimmed mean of a column.
     statistics = analyzer.calculate_budget_statistics('column_name')
@@ -72,14 +71,22 @@ Raises:
     values.
 """
 
+import pandas as pd
+import matplotlib.pyplot as plt
 from scipy.stats import trim_mean, zscore
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-import pandas as pd
-import matplotlib.pyplot as plt
+
+# Importing modules from the project's subdirectories
+from generators.report_generator import ReportGenerator
+from model.feature_engineer import FeatureEngineer
+from model.model_evaluator import ModelEvaluator
+from preprocessor.data_prep import DataPreprocessor
+from utils.data_imputer import DataImputer
+from visualizer.data_visualizer import DataVisualizer
 
 
-class DataAnalyzer:
+class DataAnalysisToolkit:
     """
     A class to perform various data analysis tasks including loading data,
     calculating statistics, detecting outliers, visualizing data, cleaning data,
@@ -88,6 +95,12 @@ class DataAnalyzer:
 
     def __init__(self, filename):
         self.data = self.load_data(filename)
+        self.visualizer = DataVisualizer(self.data)
+        self.imputer = DataImputer(self.data)
+        self.preprocessor = DataPreprocessor(self.data)
+        self.feature_engineer = FeatureEngineer(self.data)
+        self.evaluator = ModelEvaluator(self.data)
+        self.report_generator = ReportGenerator(self.data)
 
     @property
     def data(self):
@@ -135,8 +148,7 @@ class DataAnalyzer:
         try:
             df = pd.read_csv(filename)
         except FileNotFoundError as exc:
-            raise ValueError(
-                f"No such file or directory: '{filename}'") from exc
+            raise ValueError(f"No such file or directory: '{filename}'") from exc
         return df
 
     def get_summary_statistics(self):
@@ -228,10 +240,11 @@ class DataAnalyzer:
         Args:
             column_name (str): The name of the column to handle missing values.
             strategy (str, optional): The strategy to handle missing values.
-            'drop' to drop the rows with missing values, 'fill' to fill missing
-            values with 'fill_value'. Default is 'drop'.
+                'drop' to drop the rows with missing values,
+                'fill' to fill missing values with 'fill_value'.
+                Default is 'drop'.
             fill_value (scalar, optional): The value to use when filling
-            missing values. Required if strategy is 'fill'.
+                missing values. Required if strategy is 'fill'.
 
         Returns:
             None
@@ -282,7 +295,9 @@ class DataAnalyzer:
         """
         X = self._data.drop(target_column, axis=1)
         y = self._data[target_column]
-        return train_test_split(X, y, test_size=test_size, random_state=random_state)
+        return train_test_split(
+            X, y, test_size=test_size, random_state=random_state
+        )
 
     def encode_categorical_features(self):
         """
