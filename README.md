@@ -1,4 +1,4 @@
-# DataAnalysisToolkit
+# Data Analysis Toolkit
 
 [![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg?event=deployment)](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml)
 
@@ -33,6 +33,7 @@ from data_analysis_toolkit import DataAnalysisToolkit
 
 # Initialize the analyzer with the path to a CSV file
 analyzer = DataAnalysisToolkit('../data/test.csv')
+
 
 # Calculate the mean, median, mode, and trimmed mean of a column
 statistics = analyzer.calculate_budget_statistics('column_name')
@@ -73,7 +74,7 @@ pip install dataanalysistoolkit
 
 For detailed documentation, examples, and usage guides, please visit [DataAnalysisToolkit Documentation](https://github.com/thomasthaddeus/DataAnalysisToolkit/wiki).
 
-## Contributions
+## Contributing
 
 Contributions are welcome! For guidelines on how to contribute, please refer to our [Contribution Guide](https://github.com/thomasthaddeus/DataAnalysisToolkit/CONTRIBUTING.md).
 
