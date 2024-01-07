@@ -31,7 +31,7 @@ submodules:
   recursive: true
 
 # Environment variables (if needed)
-env:
-  READTHEDOCS: True
+# env:
+#   READTHEDOCS: True
 
 # Consider adding any other specific configurations required by your project
