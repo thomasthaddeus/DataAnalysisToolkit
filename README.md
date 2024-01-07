@@ -1,6 +1,6 @@
 # Data Analysis Toolkit
 
-[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg)](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml) [![PyPI](https://img.shields.io/pypi/v/DataAnalysisToolkit.svg)](https://pypi.org/project/DataAnalysisToolkit/) ![License](https://img.shields.io/github/license/thomasthaddeus/DataAnalysisToolkit.svg) ![Python Version](https://img.shields.io/pypi/pyversions/DataAnalysisToolkit.svg) ![Code Size](https://img.shields.io/github/languages/code-size/thomasthaddeus/DataAnalysisToolkit.svg) ![Last Commit](https://img.shields.io/github/last-commit/thomasthaddeus/DataAnalysisToolkit.svg) ![Issues](https://img.shields.io/github/issues-raw/thomasthaddeus/DataAnalysisToolkit.svg) ![Pull Requests](https://img.shields.io/github/issues-pr/thomasthaddeus/DataAnalysisToolkit.svg)
+[![Upload Python Package](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml/badge.svg)](https://github.com/thomasthaddeus/DataAnalysisToolkit/actions/workflows/python-publish.yml) [![PyPI](https://img.shields.io/pypi/v/DataAnalysisToolkit.svg)](https://pypi.org/project/DataAnalysisToolkit/) ![License](https://img.shields.io/github/license/thomasthaddeus/DataAnalysisToolkit.svg) ![Python Version](https://img.shields.io/pypi/pyversions/DataAnalysisToolkit.svg) ![Code Size](https://img.shields.io/github/languages/code-size/thomasthaddeus/DataAnalysisToolkit.svg) ![Last Commit](https://img.shields.io/github/last-commit/thomasthaddeus/DataAnalysisToolkit.svg) ![Issues](https://img.shields.io/github/issues-raw/thomasthaddeus/DataAnalysisToolkit.svg) ![Pull Requests](https://img.shields.io/github/issues-pr/thomasthaddeus/DataAnalysisToolkit.svg) [![Documentation Status](https://readthedocs.org/projects/dataanalysistoolkit/badge/?version=latest)](https://dataanalysistoolkit.readthedocs.io/en/latest/?badge=latest)
 
 DataAnalysisToolkit is a comprehensive Python package offering a suite of tools designed for efficient data analysis. This toolkit simplifies tasks such as loading CSV data, performing statistical analysis, cleaning data, and visualizing results. It's an ideal tool for data analysts, scientists, and anyone looking to dive into data exploration and machine learning.
 
@@ -72,7 +72,7 @@ pip install dataanalysistoolkit
 
 ## Documentation
 
-For detailed documentation, examples, and usage guides, please visit [DataAnalysisToolkit Documentation](https://github.com/thomasthaddeus/DataAnalysisToolkit/wiki).
+For detailed documentation, examples, and usage guides, please visit [DataAnalysisToolkit Documentation](https://dataanalysistoolkit.readthedocs.io/en/latest/).
 
 ## Contributing
 
