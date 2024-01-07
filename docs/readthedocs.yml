@@ -1,0 +1,35 @@
+# .readthedocs.yml
+version: 2
+
+# Configuration for Sphinx documentation
+sphinx:
+  configuration: docs/conf.py
+
+# Formats for documentation
+formats:
+  - htmlzip
+  - pdf
+  - epub
+
+# Python configuration
+python:
+  version: 3.11
+  install:
+    - requirements: docs/requirements.txt
+    - method: pip
+      path: .
+
+# Additional configurations (optional)
+build:
+  image: latest  # Use the latest image for the build environment
+
+# Submodules configuration (if your project has submodules)
+submodules:
+  include: all   # Include all submodules
+  recursive: true
+
+# Environment variables (if needed)
+env:
+  READTHEDOCS: True
+
+# Consider adding any other specific configurations required by your project
