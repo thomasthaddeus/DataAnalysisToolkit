@@ -3,9 +3,9 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('../../src'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../src/'))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -13,7 +13,7 @@
 project = 'Data Analysis Toolkit'
 copyright = '2024, Thaddeus Thomas'
 author = 'Thaddeus Thomas'
-release = '1.1.0'
+release = '1.1.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
