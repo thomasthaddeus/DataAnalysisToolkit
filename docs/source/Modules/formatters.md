@@ -1,14 +1,14 @@
-### Documentation for `formatters` Module of DataAnalysisToolkit
+# Documentation for `formatters` Module of DataAnalysisToolkit
 
 The `formatters` module in DataAnalysisToolkit offers tools for transforming and standardizing data in a DataFrame. It's designed to prepare your data for analysis, ensuring consistency and quality.
 
-#### Data Formatter (`data_formatter.py`)
+## Data Formatter (`data_formatter.py`)
 
-##### Overview
+### Overview
 
 The `DataFormatter` class is a versatile tool for performing various data formatting tasks on a pandas DataFrame. It can standardize date formats, normalize numeric data, categorize columns, and more.
 
-##### Usage
+### Usage
 
 ```python
 formatter = DataFormatter(df)
@@ -17,7 +17,7 @@ formatter.categorize_columns(['category_column1', 'category_column2'])
 formatter.normalize_numeric(['numeric_column1', 'numeric_column2'])
 ```
 
-##### Methods
+### Methods
 
 - `__init__(self, data)`: Initialize the formatter with a DataFrame.
 - `standardize_dates(self, date_column, date_format='%Y-%m-%d')`: Standardize the format of a date column.
@@ -27,7 +27,7 @@ formatter.normalize_numeric(['numeric_column1', 'numeric_column2'])
 - `encode_categorical_variables(self, columns)`: Perform one-hot encoding on categorical variables to transform them into a format suitable for machine learning models.
 - `custom_transform(self, column, transform_func)`: Apply a custom transformation function to a specified column, allowing for flexible data transformations.
 
-##### Examples
+### Examples
 
 Here are some examples demonstrating how to use the `DataFormatter` class:
 

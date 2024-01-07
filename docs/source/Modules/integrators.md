@@ -1,14 +1,14 @@
-### Documentation for `integrators` Module of DataAnalysisToolkit
+# Documentation for `integrators` Module of DataAnalysisToolkit
 
 The `integrators` module in DataAnalysisToolkit provides tools for integrating and combining data from various sources into a unified format. This is particularly useful for creating comprehensive datasets by merging data from different sources like SQL databases, Excel files, and APIs.
 
-#### Data Integrator (`data_integrator.py`)
+## Data Integrator (`data_integrator.py`)
 
-##### Overview
+### Overview
 
 The `DataIntegrator` class allows for seamless integration of multiple pandas DataFrames. It supports various methods of integration, including concatenation, merging on key columns, joining on multiple columns, and time-series integration.
 
-##### Usage
+### Usage
 
 ```python
 integrator = DataIntegrator()
@@ -17,7 +17,7 @@ integrator.add_data(df2)
 combined_data = integrator.concatenate_data()
 ```
 
-##### Methods
+### Methods
 
 - `__init__(self)`: Initialize the Data Integrator.
 - `add_data(self, data_frame)`: Add a DataFrame to be integrated.
@@ -27,7 +27,7 @@ combined_data = integrator.concatenate_data()
 - `integrate_time_series(self, time_column, method="nearest")`: Integrate time-series data based on a time column.
 - `integrate_from_different_sources(self, source_data, integration_method="concat")`: Integrate data from different sources.
 
-##### Examples
+### Examples
 
 Concatenating DataFrames:
 
