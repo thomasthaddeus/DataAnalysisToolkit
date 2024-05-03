@@ -23,6 +23,7 @@ import pickle
 from sklearn.impute import SimpleImputer
 import pandas as pd
 
+
 class DataImputer:
     """
     A class for handling missing values in datasets.

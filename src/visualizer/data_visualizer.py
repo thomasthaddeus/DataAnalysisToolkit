@@ -140,8 +140,10 @@ class DataVisualizer:
         Bar plots are useful for comparing different groups or categories.
 
         Args:
-            x_column (str): The name of the column for the x-axis (categorical data).
-            y_column (str): The name of the column for the y-axis (numerical data).
+            x_column (str): The name of the column for the x-axis (categorical
+            data).
+            y_column (str): The name of the column for the y-axis (numerical
+            data).
 
         Returns:
             None: This method shows the plot and does not return a value.
@@ -153,7 +155,8 @@ class DataVisualizer:
         """
         Generates a pie chart for a specified column.
 
-        Pie charts are useful for showing the proportion of categories in a single categorical variable.
+        Pie charts are useful for showing the proportion of categories in a
+        single categorical variable.
 
         Args:
             column (str): The name of the categorical column to visualize.
@@ -170,7 +173,8 @@ class DataVisualizer:
         """
         Generates a violin plot for a specified column.
 
-        Violin plots are useful for visualizing the distribution of data across different categories.
+        Violin plots are useful for visualizing the distribution of data across
+        different categories.
 
         Args:
             column (str): The name of the column for which to generate the violin plot.

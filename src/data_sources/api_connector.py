@@ -13,9 +13,13 @@ update_response = connector.put('endpoint', json={'key': 'updated_value'})
 delete_response = connector.delete('endpoint', params={'key': 'value'})
 patch_response = connector.patch('endpoint', json={'key': 'new_value'})
 print(response.json())
+
+response.raise_for_status()  # Will raise an HTTPError if the HTTP request
+                               returned an unsuccessful status code
 """
 
 import requests
+
 
 class APIConnector:
     """
@@ -23,13 +27,15 @@ class APIConnector:
 
     _extended_summary_
     """
+
     def __init__(self, base_url, auth=None):
         """
         Initialize the APIConnector with the base URL and optional authentication.
 
         Args:
             base_url (str): The base URL for the API.
-            auth (tuple, optional): A tuple for authentication, typically (username, password) or an API token.
+            auth (tuple, optional): A tuple for authentication, typically
+              (username, password) or an API token.
         """
         self.base_url = base_url
         self.auth = auth
@@ -43,14 +49,15 @@ class APIConnector:
 
         Args:
             endpoint (str): The API endpoint to send the request to.
-            params (dict, optional): A dictionary of parameters to send with the request.
+            params (dict, optional): A dictionary of parameters to send with
+              the request.
 
         Returns:
             Response: The response from the API.
         """
         url = f"{self.base_url}/{endpoint}"
         response = self.session.get(url, params=params)
-        response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
+        response.raise_for_status()
         return response
 
     def post(self, endpoint, data=None, json=None):
@@ -59,8 +66,10 @@ class APIConnector:
 
         Args:
             endpoint (str): The API endpoint to send the request to.
-            data (dict, optional): A dictionary of data to send in the body of the request.
-            json (dict, optional): A JSON serializable object to send in the body of the request.
+            data (dict, optional): A dictionary of data to send in the body of
+              the request.
+            json (dict, optional): A JSON serializable object to send in the
+              body of the request.
 
         Returns:
             Response: The response from the API.
@@ -70,15 +79,16 @@ class APIConnector:
         response.raise_for_status()
         return response
 
-
     def put(self, endpoint, data=None, json=None):
         """
         Send a PUT request to the API.
 
         Args:
             endpoint (str): The API endpoint to send the request to.
-            data (dict, optional): A dictionary of data to send in the body of the request.
-            json (dict, optional): A JSON serializable object to send in the body of the request.
+            data (dict, optional): A dictionary of data to send in the body of
+              the request.
+            json (dict, optional): A JSON serializable object to send in the
+              body of the request.
 
         Returns:
             Response: The response from the API.
@@ -94,7 +104,8 @@ class APIConnector:
 
         Args:
             endpoint (str): The API endpoint to send the request to.
-            params (dict, optional): A dictionary of parameters to send with the request.
+            params (dict, optional): A dictionary of parameters to send with
+              the request.
 
         Returns:
             Response: The response from the API.
@@ -110,8 +121,10 @@ class APIConnector:
 
         Args:
             endpoint (str): The API endpoint to send the request to.
-            data (dict, optional): A dictionary of data to send in the body of the request.
-            json (dict, optional): A JSON serializable object to send in the body of the request.
+            data (dict, optional): A dictionary of data to send in the body of
+              the request.
+            json (dict, optional): A JSON serializable object to send in the
+              body of the request.
 
         Returns:
             Response: The response from the API.

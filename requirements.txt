@@ -4,9 +4,7 @@ scikit-learn
 pandas
 matplotlib
 seaborn
-pytest
 nltk
 requests
 sqlalchemy
-pytest-mock
 openpyxl

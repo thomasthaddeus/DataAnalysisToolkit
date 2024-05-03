@@ -25,6 +25,11 @@ import seaborn as sns
 
 
 class ReportGenerator:
+    """
+     _summary_
+
+    _extended_summary_
+    """
     def __init__(self, data, columns=None):
         """
         Initializes the ReportGenerator with the dataset and optional specific
@@ -38,7 +43,6 @@ class ReportGenerator:
         """
         self.data = data
         self.columns = columns if columns else data.columns
-
 
     def _generate_base64_image(self, plot_func):
         """
@@ -97,13 +101,17 @@ class ReportGenerator:
             )
 
         # Add scatter plots for pairwise relationships
-        report_sections.append('<h2>Scatter Plots</h2>')
-        numeric_columns = self.data[self.columns].select_dtypes(include=['float64', 'int64']).columns
+        report_sections.append("<h2>Scatter Plots</h2>")
+        numeric_columns = (
+            self.data[self.columns].select_dtypes(include=["float64", "int64"]).columns
+        )
         if len(numeric_columns) > 1:
             for i, col1 in enumerate(numeric_columns[:-1]):
-                for col2 in numeric_columns[i + 1:]:
+                for col2 in numeric_columns[i + 1 :]:
                     image = self._generate_base64_image(
-                        lambda col1=col1, col2=col2: sns.scatterplot(x=col1, y=col2, data=self.data)
+                        lambda col1=col1, col2=col2: sns.scatterplot(
+                            x=col1, y=col2, data=self.data
+                        )
                     )
                     report_sections.append(
                         f'<img src="data:image/png;base64,{image}" alt="Scatter plot of {col1} vs {col2}"><br>'

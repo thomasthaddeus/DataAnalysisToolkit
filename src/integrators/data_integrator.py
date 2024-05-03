@@ -1,21 +1,29 @@
-"""data_integrator.py
-_summary_
+"""
+data_integrator.py
 
-_extended_summary_
+A module for integrating multiple data sources using pandas DataFrames.
+This module provides a class, DataIntegrator, which allows users to
+combine, merge, and join data from various sources such as SQL, Excel,
+and APIs. It also supports time series integration and concatenation
+methods.
 
-Returns:
-    _type_: _description_
+The module can be used to handle complex data integration needs in data
+science and analytics projects, enabling seamless combination of data
+from different formats and sources.
 
-# Example usage
-integrator = DataIntegrator()
-integrator.add_data(df1)
-integrator.add_data(df2)
-combined_data = integrator.join_on_multiple_columns(['column1', 'column2'])
-# or
-time_series_data = integrator.integrate_time_series('date', method='nearest')
-# or
-source_data = {'sql': sql_df, 'excel': excel_df, 'api': api_df}
-integrated_data = integrator.integrate_from_different_sources(source_data, 'concat')
+Example usage:
+
+    integrator = DataIntegrator()
+    integrator.add_data(df1)
+    integrator.add_data(df2)
+    combined_data = integrator.join_on_multiple_columns(['column1', 'column2'])
+    # or
+    time_series_data = integrator.integrate_time_series('date', method='nearest')
+    # or
+    source_data = {'sql': sql_df, 'excel': excel_df, 'api': api_df}
+    integrated_data = integrator.integrate_from_different_sources(
+        source_data, 'concat'
+    )
 """
 
 import pandas as pd
@@ -23,23 +31,28 @@ import pandas as pd
 
 class DataIntegrator:
     """
-     _summary_
+    A class for integrating multiple pandas DataFrames.
 
-    _extended_summary_
+    The DataIntegrator class provides methods to add DataFrames and
+    perform various integration operations such as concatenation, merge,
+    join on multiple columns, and time series integration.
+
+    Attributes:
+        data_frames (list): A list to store the added DataFrames.
     """
 
     def __init__(self):
         """
-        Initialize the DataIntegrator.
+        Initialize the DataIntegrator with an empty list of DataFrames.
         """
         self.data_frames = []
 
     def add_data(self, data_frame):
         """
-        Add a DataFrame to the list of data to be integrated.
+        Add a pandas DataFrame to the list of data to be integrated.
 
         Args:
-            data_frame (DataFrame): A pandas DataFrame to be added.
+            data_frame (pd.DataFrame): A pandas DataFrame to be added.
         """
         self.data_frames.append(data_frame)
 
@@ -48,22 +61,21 @@ class DataIntegrator:
         Concatenate all added DataFrames into a single DataFrame.
 
         Returns:
-            DataFrame: The concatenated DataFrame.
+            pd.DataFrame: The concatenated DataFrame.
         """
         return pd.concat(self.data_frames, ignore_index=True)
 
     def merge_data(self, on, how="inner"):
         """
-        Merge all added DataFrames into a single DataFrame based on a key
-        column.
+        Merge all added DataFrames into a single DataFrame based on a key column.
 
         Args:
             on (str): Column name to merge on.
-            how (str, optional): Type of merge to be performed. Defaults to
-            'inner'.
+            how (str, optional): Type of merge to be performed.
+              Defaults to 'inner'.
 
         Returns:
-            DataFrame: The merged DataFrame.
+            pd.DataFrame: The merged DataFrame.
         """
         merged_df = self.data_frames[0]
         for df in self.data_frames[1:]:
@@ -76,11 +88,11 @@ class DataIntegrator:
 
         Args:
             columns (list of str): List of column names to join on.
-            how (str, optional): Type of join to be performed. Defaults to
-            'inner'.
+            how (str, optional): Type of join to be performed.
+              Defaults to 'inner'.
 
         Returns:
-            DataFrame: The joined DataFrame.
+            pd.DataFrame: The joined DataFrame.
         """
         joined_df = self.data_frames[0]
         for df in self.data_frames[1:]:
@@ -93,33 +105,31 @@ class DataIntegrator:
 
         Args:
             time_column (str): The name of the time column for integration.
-            method (str, optional): Method of time series integration (e.g.,
-            'nearest', 'pad'). Defaults to 'nearest'.
+            method (str, optional): Method of time series integration
+              (e.g., 'nearest', 'pad'). Defaults to 'nearest'.
 
         Returns:
-            DataFrame: The integrated DataFrame with time series data.
+            pd.DataFrame: The integrated DataFrame with time series data.
         """
         integrated_df = self.data_frames[0]
         for df in self.data_frames[1:]:
             integrated_df = pd.merge_asof(
-                integrated_df, df, on=time_column, method=method
+                integrated_df, df, on=time_column, direction=method
             )
         return integrated_df
 
-    def integrate_from_different_sources(
-        self, source_data, integration_method="concat"
-    ):
+    def integrate_from_different_sources(self, source_data, integration_method="concat"):
         """
         Integrate data from different sources (like SQL, Excel, APIs).
 
         Args:
             source_data (dict): A dictionary where keys are source names and
-            values are DataFrames.
+              values are DataFrames.
             integration_method (str, optional): The method of integration
-            ('concat', 'merge'). Defaults to 'concat'.
+              ('concat', 'merge'). Defaults to 'concat'.
 
         Returns:
-            DataFrame: The integrated DataFrame from different sources.
+            pd.DataFrame: The integrated DataFrame from different sources.
         """
         self.data_frames = list(source_data.values())
         if integration_method == "concat":

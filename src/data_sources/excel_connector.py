@@ -44,7 +44,10 @@ class ExcelConnector:
             header (int, list of int, optional): Row (0-indexed) to use as the header.
 
         Returns:
-            DataFrame: A pandas DataFrame containing the data from the Excel file.
+            DataFrame: A pandas DataFrame containing the data from the Excel
+            file.
+
+        # TODO: add more exceptions with less broad catching
         """
         try:
             return pd.read_excel(self.file_path, sheet_name=sheet_name, header=header)
@@ -57,6 +60,8 @@ class ExcelConnector:
 
         Returns:
             dict: A dictionary of DataFrames, with sheet names as keys and DataFrames as values.
+
+        # TODO: add more exceptions with less broad catching
         """
         try:
             return pd.read_excel(self.file_path, sheet_name=None)
@@ -68,11 +73,15 @@ class ExcelConnector:
         Preview a few rows from a specified sheet in the Excel file.
 
         Args:
-            sheet_name (str or int, optional): The name or index of the sheet. Defaults to the first sheet.
+            sheet_name (str or int, optional): The name or index of the sheet.
+              Defaults to the first sheet.
             num_rows (int, optional): Number of rows to preview. Defaults to 5.
 
         Returns:
-            DataFrame: A pandas DataFrame containing the first few rows from the specified sheet.
+            DataFrame: A pandas DataFrame containing the first few rows from
+              the specified sheet.
+
+        # TODO: add more exceptions with less broad catching
         """
         try:
             return pd.read_excel(self.file_path, sheet_name=sheet_name, nrows=num_rows)

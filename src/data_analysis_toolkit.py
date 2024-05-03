@@ -27,6 +27,8 @@ statistics, detect outliers, handle missing values, drop duplicates, encode
 categorical features, split data into training and testing sets, visualize data,
 generate reports, preprocess data, and impute missing values.
 
+TODO: Update the example and usage of this program.
+
 Example usage:
 
     from data_analysis_toolkit import DataAnalysisToolkit
@@ -78,12 +80,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 # Importing modules from the project's subdirectories
-from generators.report_generator import ReportGenerator
-from model.feature_engineer import FeatureEngineer
-from model.model_evaluator import ModelEvaluator
-from preprocessor.data_prep import DataPreprocessor
-from utils.data_imputer import DataImputer
-from visualizer.data_visualizer import DataVisualizer
+from .generators import ReportGenerator
+from .model import FeatureEngineer, ModelEvaluator
+from .preprocessor import DataPreprocessor
+from .utils import DataImputer
+from .visualizer import DataVisualizer
 
 
 class DataAnalysisToolkit:
@@ -94,6 +95,14 @@ class DataAnalysisToolkit:
     """
 
     def __init__(self, filename):
+        """
+        __init__ _summary_
+
+        _extended_summary_
+
+        Args:
+            filename (_type_): _description_
+        """
         self.data = self.load_data(filename)
         self.visualizer = DataVisualizer(self.data)
         self.imputer = DataImputer(self.data)
@@ -284,10 +293,10 @@ class DataAnalysisToolkit:
         Args:
             target_column (str): The name of the target (dependent) column.
             test_size (float, optional): The proportion of the dataset to
-            include in the test split. Default is 0.2.
+              include in the test split. Default is 0.2.
             random_state (int, optional): Controls the shuffling applied to the
-            data before applying the split. Pass an int for reproducible output
-            across multiple function calls.
+              data before applying the split. Pass an int for reproducible
+              output across multiple function calls.
 
         Returns:
             tuple: A tuple containing the training and testing data (X_train,
