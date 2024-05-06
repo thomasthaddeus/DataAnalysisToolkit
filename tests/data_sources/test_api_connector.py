@@ -1,7 +1,7 @@
 import pytest
 import requests
 import requests_mock
-from src.data_sources.api_connector import APIConnector
+from dataanalysistoolkit.data_sources.api_connector import APIConnector
 
 @pytest.fixture
 def api_connector():
