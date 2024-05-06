@@ -1,4 +1,4 @@
-"""excel_connector.py
+"""data_sources/excel_connector.py
 _summary_
 
 _extended_summary_
@@ -40,8 +40,10 @@ class ExcelConnector:
         Load data from a specified sheet in the Excel file.
 
         Args:
-            sheet_name (str or int, optional): The name or index of the sheet to read data from. Defaults to the first sheet.
-            header (int, list of int, optional): Row (0-indexed) to use as the header.
+            sheet_name (str or int, optional): The name or index of the sheet
+              to read data from. Defaults to the first sheet.
+            header (int, list of int, optional): Row (0-indexed) to use as the
+              header.
 
         Returns:
             DataFrame: A pandas DataFrame containing the data from the Excel
@@ -52,7 +54,7 @@ class ExcelConnector:
         try:
             return pd.read_excel(self.file_path, sheet_name=sheet_name, header=header)
         except Exception as e:
-            raise Exception(f"Error reading Excel file: {e}")
+            raise Exception(f"Error reading Excel file: {e}") from e
 
     def load_all_sheets(self):
         """
@@ -66,7 +68,7 @@ class ExcelConnector:
         try:
             return pd.read_excel(self.file_path, sheet_name=None)
         except Exception as e:
-            raise Exception(f"Error reading Excel file: {e}")
+            raise Exception(f"Error reading Excel file: {e}") from e
 
     def preview_sheet(self, sheet_name=0, num_rows=5):
         """
@@ -86,4 +88,4 @@ class ExcelConnector:
         try:
             return pd.read_excel(self.file_path, sheet_name=sheet_name, nrows=num_rows)
         except Exception as e:
-            raise Exception(f"Error previewing Excel file: {e}")
+            raise Exception(f"Error previewing Excel file: {e}") from e
