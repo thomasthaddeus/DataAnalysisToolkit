@@ -25,7 +25,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11" # Specify the exact version used for development
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -49,9 +49,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/dataanalysistoolkit # Replace <package-name> with your PyPI project name
+      url: https://pypi.org/p/dataanalysistoolkit
     permissions:
-      id-token: write # IMPORTANT: mandatory for trusted publishing
+      id-token: write
 
     steps:
       - name: Download all the dists

@@ -39,6 +39,7 @@ DataAnalysisToolkit is a comprehensive Python package for data analysis, offerin
    Appendices/api_references
    Appendices/changelog
    Appendices/contact_info
+   Appendices/data_import
    Appendices/getting_support
    Appendices/how_to_contribute
    Appendices/reporting_issues

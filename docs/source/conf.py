@@ -7,13 +7,16 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../src/'))
 
+from dataanalysistoolkit import __version__
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Data Analysis Toolkit'
 copyright = '2024, Thaddeus Thomas'
 author = 'Thaddeus Thomas'
-release = '1.2.1'
+release = __version__
+version = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -38,7 +41,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'latest'
 html_static_path = ['_static']
 
 html_sidebars = {
