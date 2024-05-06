@@ -9,34 +9,105 @@ DataVisualizer is designed to work with pandas DataFrames to produce insightful
 visualizations. The class offers a range of methods for different types of
 plots, making it easier to explore and understand data patterns and
 relationships.
+
+Returns:
+    _type_: _description_
 """
 
+import json
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 class DataVisualizer:
     """
-    A class for visualizing data in various forms.
+    A class for visualizing data using configurations loaded from a JSON file
+    and customizable themes.
 
     This class provides methods for creating different types of plots, such as
     box plots, scatter plots, heatmaps, histograms, line plots, and pair plots.
-    It helps in exploring data and extracting insights visually.
+    It helps in exploring data and extracting insights visually using a
+    customizable configuration.
 
     Attributes:
         data (DataFrame): The pandas DataFrame from which visualizations will
-        be generated.
+          be generated.
     """
-    def __init__(self, data):
+    def __init__(self, data, config_path):
         """
-        Initializes the DataVisualizer with the dataset.
+        Initializes the DataVisualizer with the dataset and configuration.
 
         Args:
             data (DataFrame): The pandas DataFrame to be used for generating
-            visualizations.
+              visualizations.
+            config_path (str): Path to the JSON configuration file for plot
+              settings.
         """
         self.data = data
+        self.set_theme()
+        self._load_config(config_path)
 
-    def boxplot(self, column, by=None):
+    def _load_config(self, config_path):
+        """
+        Loads the plot configuration from a JSON file.
+
+        Args:
+            config_path (str): Path to the configuration file.
+        """
+        with open(config_path, 'r', encoding='utf-8') as file:
+            self.config = json.load(file)
+        self.apply_global_style()
+
+    def apply_global_style(self):
+        """
+        Applies the global style settings from the configuration.
+        """
+        global_style = self.config.get('global_style', {})
+        if 'style' in global_style:
+            sns.set_style(global_style['style'])
+        if 'context' in global_style:
+            sns.set_context(global_style['context'])
+        for key, value in global_style.items():
+            if key.startswith('figure.') or key.startswith('axes.'):
+                plt.rcParams[key] = value
+
+    def apply_plot_style(self, plot_type):
+        """
+        Applies specific plot style settings, merging them with the global
+        style.
+
+        Args:
+            plot_type (str): The type of plot for which to apply specific
+              styles.
+        """
+        plot_style = self.config.get(plot_type, {})
+        for key, value in plot_style.items():
+            plt.rcParams[key] = value
+
+    def set_theme(
+        self,
+        style="whitegrid",
+        context="talk",
+        figsize=(12,8),
+        titlesize=20,
+        labelsize=18,
+    ):
+        """
+        Configures the visual theme for all plots using matplotlib and seaborn.
+
+        Args:
+            style (str): The base style of the plots.
+            context (str): The context theme of seaborn.
+            figsize (list): Size of the figures in inches.
+            titlesize (int): Size of the titles.
+            labelsize (int): Size of the labels.
+        """
+        sns.set_style(style)
+        sns.set_context(context)
+        plt.rcParams["figure.figsize"] = figsize
+        plt.rcParams["axes.titlesize"] = titlesize
+        plt.rcParams["axes.labelsize"] = labelsize
+
+    def boxplot(self, col, by=None):
         """
         Generates a box plot for a specified column.
 
@@ -52,10 +123,16 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        sns.boxplot(x=by, y=column, data=self.data)
+        self.apply_plot_style("boxplot")
+        sns.boxplot(
+            x=by,
+            y=col,
+            data=self.data,
+            palette=self.config["boxplot"].get("palette", "deep"),
+        )
         plt.show()
 
-    def scatterplot(self, x_column, y_column):
+    def scatterplot(self, x_col, y_col):
         """
         Generates a scatter plot between two columns.
 
@@ -69,7 +146,8 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        sns.scatterplot(x=x_column, y=y_column, data=self.data)
+        self.apply_plot_style("scatterplot")
+        sns.scatterplot(x=x_col, y=y_col, data=self.data)
         plt.show()
 
     def heatmap(self):
@@ -82,11 +160,12 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
+        self.apply_plot_style("heatmap")
         correlation = self.data.corr()
         sns.heatmap(correlation, annot=True)
         plt.show()
 
-    def histogram(self, column):
+    def histogram(self, col):
         """
         Generates a histogram for a specified column.
 
@@ -100,10 +179,11 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        sns.histplot(self.data[column])
+        self.apply_plot_style("histogram")
+        sns.histplot(self.data[col])
         plt.show()
 
-    def lineplot(self, x_column, y_column):
+    def lineplot(self, x_col, y_col):
         """
         Generates a line plot between two columns.
 
@@ -117,7 +197,8 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        sns.lineplot(x=x_column, y=y_column, data=self.data)
+        self.apply_plot_style("lineplot")
+        sns.lineplot(x=x_col, y=y_col, data=self.data)
         plt.show()
 
     def pairplot(self):
@@ -130,10 +211,11 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
+        self.apply_plot_style("pairplot")
         sns.pairplot(self.data)
         plt.show()
 
-    def barplot(self, x_column, y_column):
+    def barplot(self, x_col, y_col):
         """
         Generates a bar plot for two columns.
 
@@ -148,10 +230,11 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        sns.barplot(x=x_column, y=y_column, data=self.data)
+        self.apply_plot_style("barplot")
+        sns.barplot(x=x_col, y=y_col, data=self.data)
         plt.show()
 
-    def piechart(self, column):
+    def piechart(self, col):
         """
         Generates a pie chart for a specified column.
 
@@ -164,12 +247,13 @@ class DataVisualizer:
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        pie_data = self.data[column].value_counts()
-        plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%')
-        plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        self.apply_plot_style("piechart")
+        pie_data = self.data[col].value_counts()
+        plt.pie(pie_data, labels=pie_data.index, autopct="%1.1f%%")
+        plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
         plt.show()
 
-    def violinplot(self, column, by=None):
+    def violinplot(self, col, by=None):
         """
         Generates a violin plot for a specified column.
 
@@ -177,11 +261,14 @@ class DataVisualizer:
         different categories.
 
         Args:
-            column (str): The name of the column for which to generate the violin plot.
-            by (str, optional): A column name to group data by. Defaults to None.
+            column (str): The name of the column for which to generate the
+              violin plot.
+            by (str, optional): A column name to group data by. Defaults to
+              None.
 
         Returns:
             None: This method shows the plot and does not return a value.
         """
-        sns.violinplot(x=by, y=column, data=self.data)
+        self.apply_plot_style("violinplot")
+        sns.violinplot(x=by, y=col, data=self.data)
         plt.show()
