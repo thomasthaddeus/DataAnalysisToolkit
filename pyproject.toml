@@ -30,6 +30,8 @@ classifiers = [
 ]
 requires-python = ">=3.8"
 keywords = ["data analysis", "CSV", "statistics", "data cleaning", "data visualization"]
+# include = ["src/**/*.py", "docs/**/*.md"]
+# exclude = ["tests/", "examples/"]
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-mock", "check-manifest"]
@@ -42,7 +44,3 @@ version = {attr = "dataanalysistoolkit.__version__"}
 Repository = "https://github.com/thomasthaddeus/dataanalysistoolkit"
 Issues = "https://github.com/thomasthaddeus/dataanalysistoolkit/issues"
 Documentation = "https://dataanalysistoolkit.readthedocs.io/en/latest/"
-
-[tool.setuptools]
-include = ["src/**/*.py", "docs/**/*.md"]
-exclude = ["tests/", "examples/"]

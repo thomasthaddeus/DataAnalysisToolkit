@@ -81,3 +81,53 @@ __all__ = [
     "DataPreprocessor",
     "ReportGenerator"
 ]
+from .utils import DataImputer
+from .model import FeatureEngineer, ModelEvaluator
+from .preprocessor import DataPreprocessor
+from .generators import ReportGenerator
+from .visualizer import DataVisualizer
+
+# Dependency checks
+required_packages = {
+    'pandas': '1.1.5',
+    'matplotlib': '3.3.4',
+    'scipy': '1.6.0',
+    'sklearn': '0.24.1'
+}
+
+missing_packages = []
+
+for lib, version in required_packages.items():
+    try:
+        pkg = __import__(lib)
+        if pkg.__version__ < version:
+            missing_packages.append(f"{lib}>= {version}")
+    except ImportError:
+        missing_packages.append(f"{lib}>= {version}")
+
+if missing_packages:
+    sys.exit("Missing required packages: " + ', '.join(missing_packages))
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+logger.info("Initializing DataAnalysisToolkit package")
+
+# Initialization code that runs on package import, if any
+def _init_package():
+    # Put any package-wide initialization logic here
+    logger.debug("Package initialized successfully")
+
+_init_package()
+
+# Ensure that this module only exposes the intended public interface
+__all__ = [
+    "DataAnalysisToolkit",
+    "DataImputer",
+    "DataVisualizer",
+    "FeatureEngineer",
+    "ModelEvaluator",
+    "DataPreprocessor",
+    "ReportGenerator"
+]
