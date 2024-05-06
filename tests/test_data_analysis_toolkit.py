@@ -23,12 +23,12 @@ Raises:
 
 import pytest
 import pandas as pd
-from src.data_analysis_toolkit import DataAnalysisToolkit
+from dataanalysistoolkit.data_analysis_toolkit import DataAnalysisToolkit
 
 
 @pytest.fixture
 def analyzer():
-    return DataAnalysisToolkit("../data/test.csv")
+    return DataAnalysisToolkit("./data/test_random.csv")
 
 
 def test_calculate_budget_statistics(analyzer):

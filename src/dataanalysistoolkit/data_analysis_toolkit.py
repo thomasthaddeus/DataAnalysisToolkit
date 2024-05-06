@@ -83,10 +83,12 @@ class DataAnalysisToolkit:
             filename (_type_): _description_
         """
         self.data = self.load_data(filename)
-        self.visualizer = DataVisualizer(self.data)
+        self.visualizer = DataVisualizer(self.data, config_path='.conf/plot_config.json')
         self.imputer = DataImputer(self.data)
         self.preprocessor = DataPreprocessor(self.data)
         self.feature_engineer = FeatureEngineer(self.data)
+        # No value for argument 'X_test' in constructor callPylintE1120:no-value-for-parameter
+        # No value for argument 'y_test' in constructor callPylintE1120:no-value-for-parameter
         self.evaluator = ModelEvaluator(self.data)
         self.report_generator = ReportGenerator(self.data)
 
