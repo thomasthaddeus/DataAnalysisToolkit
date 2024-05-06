@@ -22,7 +22,7 @@
 # SOFTWARE.
 
 # Metadata about the package
-__version__ = '1.2.1'
+__version__ = '1.2.2'
 __author__ = 'Thaddeus Thomas'
 __email__ = 'thaddeus@vcwtech.com'
 
@@ -40,7 +40,6 @@ from .visualizer import DataVisualizer
 # Dependency checks
 required_packages = {
     "backports.tarfile": "1.1.1",
-    "build": "1.2.1",
     "certifi": "2024.2.2",
     "charset-normalizer": "3.3.2",
     "click": "8.1.7",
@@ -52,9 +51,6 @@ required_packages = {
     "greenlet": "3.0.3",
     "idna": "3.7",
     "importlib_metadata": "7.1.0",
-    "jaraco.classes": "3.4.0",
-    "jaraco.context": "5.3.0",
-    "jaraco.functools": "4.0.1",
     "joblib": "1.4.2",
     "keyring": "25.2.0",
     "kiwisolver": "1.4.5",
@@ -88,7 +84,6 @@ required_packages = {
     "SQLAlchemy": "2.0.30",
     "threadpoolctl": "3.5.0",
     "tqdm": "4.66.4",
-    "twine": "5.0.0",
     "typing_extensions": "4.11.0",
     "tzdata": "2024.1",
     "urllib3": "2.2.1",

@@ -1,7 +1,8 @@
 import pytest
+from unittest.mock import Mock
 import pandas as pd
 from sqlalchemy.engine import create_engine
-from src.data_sources.sql_connector import SQLConnector
+from dataanalysistoolkit.data_sources.sql_connector import SQLConnector
 
 @pytest.fixture
 def sql_connector(mocker):
