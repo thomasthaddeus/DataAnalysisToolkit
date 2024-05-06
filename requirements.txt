@@ -1,10 +1,9 @@
-numpy
-scipy
-scikit-learn
 pandas
 matplotlib
-seaborn
-nltk
+scipy
+scikit-learn
 requests
 sqlalchemy
-openpyxl
+nltk
+seaborn
+numpy
