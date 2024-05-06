@@ -1,0 +1,18 @@
+{
+    "global_style": {
+        "style": "whitegrid",
+        "context": "talk",
+        "figure.figsize": [12, 8],
+        "axes.titlesize": 20,
+        "axes.labelsize": 18
+    },
+    "boxplot": {
+        "palette": "viridis"
+    },
+    "scatterplot": {
+        "style": "darkgrid"
+    },
+    "heatmap": {
+        "cmap": "coolwarm"
+    }
+}
