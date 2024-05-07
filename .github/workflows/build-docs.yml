@@ -33,10 +33,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r docs/requirements.txt
 
-      - name: List directory structure
-        run: |
-          ls -R docs/
-
       - name: Build Documentation with Sphinx
         run: |
           sphinx-build -M html docs/source/ docs/build/
