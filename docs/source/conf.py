@@ -5,16 +5,16 @@
 
 import os
 import sys
+from dataanalysistoolkit.data_analysis_toolkit import __version__, __author__
 sys.path.insert(0, os.path.abspath('../../src/'))
 
-from dataanalysistoolkit import __version__
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Data Analysis Toolkit'
 copyright = '2024, Thaddeus Thomas'
-author = 'Thaddeus Thomas'
+author = __author__
 release = __version__
 version = __version__
 
@@ -47,10 +47,10 @@ html_static_path = ['_static']
 html_sidebars = {
    '**': [
        'about.html',
+       'donate.html',
        'navigation.html',
        'relations.html',
        'searchbox.html',
-       'donate.html',
    ]
 }
 

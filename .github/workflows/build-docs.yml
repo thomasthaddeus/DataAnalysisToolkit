@@ -24,6 +24,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r docs/requirements.txt
 
+      - name: List directory structure
+        run: |
+          ls -R docs/
+
       - name: Build Documentation with Sphinx
         run: |
           cd docs
@@ -31,8 +35,8 @@ jobs:
         env:
           READTHEDOCS: 'True'
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Documentation
-          path: docs/_build/html/
+      # - name: Upload Artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: Documentation
+      #     path: docs/_build/html/
