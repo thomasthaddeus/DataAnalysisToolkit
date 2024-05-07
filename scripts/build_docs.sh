@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# renders the documentation
+sphinx-build -M html docs/source/ docs/build/
+
 # Navigate to the documentation directory
 cd docs
 

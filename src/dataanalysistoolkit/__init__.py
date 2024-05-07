@@ -91,15 +91,15 @@ required_packages = {
 
 missing_packages = []
 
-for lib, version in required_packages.items():
-    try:
-        pkg = __import__(lib)
-        # Safely get the version or None if not available
-        pkg_version = getattr(pkg, '__version__', None)
-        if not pkg_version or pkg_version < version:
-            missing_packages.append(f"{lib}>= {version}")
-    except ImportError:
-        missing_packages.append(f"{lib}>= {version}")
+# for lib, version in required_packages.items():
+#     try:
+#         pkg = __import__(lib)
+#         # Safely get the version or None if not available
+#         pkg_version = getattr(pkg, __version__, None)
+#         if not pkg_version or pkg_version < version:
+#             missing_packages.append(f"{lib}>= {version}")
+#     except ImportError:
+#         missing_packages.append(f"{lib}>= {version}")
 
 if missing_packages:
     sys.exit("Missing required packages: " + ', '.join(missing_packages))

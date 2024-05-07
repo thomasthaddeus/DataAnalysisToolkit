@@ -5,18 +5,18 @@
 
 import os
 import sys
-from dataanalysistoolkit import __version__, __author__
-sys.path.insert(0, os.path.abspath('../../src/'))
+# from dataanalysistoolkit import __version__, __author__
+sys.path.insert(0, os.path.abspath('../../src/dataanalysistoolkit/'))
 
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Data Analysis Toolkit'
-copyright = '2024, Thaddeus Thomas'
-author = __author__
-release = __version__
-version = __version__
+copyright = '2024, Thaddeus Thomas'  # pylint: disable=W0622
+author = 'Thaddeus Thomas'
+release = '1.2.2'
+version = '1.2.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -32,6 +32,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinx.ext.graphviz',
     'nbsphinx'
 ]
 
@@ -41,7 +42,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'latest'
+html_theme = 'bizstyle'
 html_static_path = ['_static']
 
 html_sidebars = {
@@ -50,6 +51,7 @@ html_sidebars = {
        'donate.html',
        'navigation.html',
        'relations.html',
+       'sourcelink.html',
        'searchbox.html',
    ]
 }
