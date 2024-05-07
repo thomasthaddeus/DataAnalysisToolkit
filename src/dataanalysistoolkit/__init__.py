@@ -39,7 +39,6 @@ from .visualizer import DataVisualizer
 
 # Dependency checks
 required_packages = {
-    "backports.tarfile": "1.1.1",
     "certifi": "2024.2.2",
     "charset-normalizer": "3.3.2",
     "click": "8.1.7",
@@ -95,7 +94,9 @@ missing_packages = []
 for lib, version in required_packages.items():
     try:
         pkg = __import__(lib)
-        if pkg.__version__ < version:
+        # Safely get the version or None if not available
+        pkg_version = getattr(pkg, '__version__', None)
+        if not pkg_version or pkg_version < version:
             missing_packages.append(f"{lib}>= {version}")
     except ImportError:
         missing_packages.append(f"{lib}>= {version}")

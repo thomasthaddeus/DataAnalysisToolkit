@@ -5,7 +5,7 @@
 
 import os
 import sys
-from dataanalysistoolkit.data_analysis_toolkit import __version__, __author__
+from dataanalysistoolkit import __version__, __author__
 sys.path.insert(0, os.path.abspath('../../src/'))
 
 
