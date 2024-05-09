@@ -15,8 +15,8 @@ sys.path.insert(0, os.path.abspath('../../src/dataanalysistoolkit/'))
 project = 'Data Analysis Toolkit'
 copyright = '2024, Thaddeus Thomas'  # pylint: disable=W0622
 author = 'Thaddeus Thomas'
-release = '1.2.2'
-version = '1.2.2'
+release = '1.2.3'
+version = '1.2.3'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

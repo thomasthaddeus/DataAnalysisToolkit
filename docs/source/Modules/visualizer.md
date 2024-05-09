@@ -1,3 +1,6 @@
+<!-- TODO: update to reflect the changes to the class -->
+<!-- TODO:  -->
+
 # Documentation for `visualizer` Module of DataAnalysisToolkit
 
 The `visualizer` module in DataAnalysisToolkit offers a suite of tools for creating various types of data visualizations. It leverages libraries like matplotlib and seaborn to generate insightful plots from pandas DataFrames.
