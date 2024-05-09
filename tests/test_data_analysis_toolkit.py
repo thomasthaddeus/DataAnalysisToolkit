@@ -23,7 +23,7 @@ Raises:
 
 import pytest
 import pandas as pd
-from dataanalysistoolkit.data_analysis_toolkit import DataAnalysisToolkit
+from dataanalysistoolkit import DataAnalysisToolkit
 
 
 @pytest.fixture

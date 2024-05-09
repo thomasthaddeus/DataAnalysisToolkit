@@ -61,8 +61,7 @@ from sklearn.preprocessing import LabelEncoder
 # Importing modules from the project's subdirectories
 from .generators import ReportGenerator
 from .model import FeatureEngineer, ModelEvaluator
-from .preprocessor import DataPreprocessor
-from .utils import DataImputer
+from .preprocessor import DataPreprocessor, DataImputer, DataFormatter
 from .visualizer import DataVisualizer
 
 
@@ -87,9 +86,7 @@ class DataAnalysisToolkit:
         self.imputer = DataImputer(self.data)
         self.preprocessor = DataPreprocessor(self.data)
         self.feature_engineer = FeatureEngineer(self.data)
-        # No value for argument 'X_test' in constructor callPylintE1120:no-value-for-parameter
-        # No value for argument 'y_test' in constructor callPylintE1120:no-value-for-parameter
-        self.evaluator = ModelEvaluator(self.data)
+        self.evaluator = ModelEvaluator(self.data, X_test, y_test)
         self.report_generator = ReportGenerator(self.data)
 
     @property
@@ -247,7 +244,7 @@ class DataAnalysisToolkit:
             self._data[column_name].fillna(fill_value, inplace=True)
         else:
             raise ValueError(
-                "Unknown strategy: '{strategy}'. Available strategies are 'drop' and 'fill'."
+                f"Unknown strategy: '{strategy}'. Available strategies are 'drop' and 'fill'."
             )
 
     def drop_duplicates(self, subset=None, keep="first"):

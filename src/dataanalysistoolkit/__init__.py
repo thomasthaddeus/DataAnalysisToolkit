@@ -22,19 +22,20 @@
 # SOFTWARE.
 
 # Metadata about the package
-__version__ = '1.2.2'
+__version__ = '1.2.3'
 __author__ = 'Thaddeus Thomas'
 __email__ = 'thaddeus@vcwtech.com'
+
 
 import logging
 import sys
 
 # Convenience imports for users
 from .data_analysis_toolkit import DataAnalysisToolkit
-from .utils import DataImputer
 from .model import FeatureEngineer, ModelEvaluator
-from .preprocessor import DataPreprocessor
-from .generators import ReportGenerator
+from .preprocessor import DataPreprocessor, DataImputer, DataFormatter
+from .generators import ReportGenerator, CSVDataGenerator
+from .integrators import DataIntegrator
 from .visualizer import DataVisualizer
 
 # Dependency checks
@@ -121,9 +122,12 @@ _init_package()
 __all__ = [
     "DataAnalysisToolkit",
     "DataImputer",
+    "DataFormatter",
+    "DataPreprocessor",
     "DataVisualizer",
     "FeatureEngineer",
     "ModelEvaluator",
-    "DataPreprocessor",
-    "ReportGenerator"
+    "ReportGenerator",
+    "CSVDataGenerator",
+    "DataIntegrator",
 ]
