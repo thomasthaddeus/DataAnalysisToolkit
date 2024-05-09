@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "DataAnalysisToolkit"
-version = "1.2.2"
+version = "1.2.3"
 description = "The DataAnalysisToolkit project is a Python-based data analysis tool designed to streamline various data analysis tasks. It allows users to load data from CSV files and perform operations such as statistical calculations, outlier detection, data cleaning, and visualization."
 authors = ["Thaddeus Thomas <thaddeus.r.thomas@gmail.com>"]
 license = "MIT"
