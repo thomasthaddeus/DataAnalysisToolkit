@@ -1,0 +1,12 @@
+repos:
+  - repo: local
+    hooks:
+      - id: update-version
+        name: Update Version
+        entry: python ./src/dataanalysistoolkit/utils/update_version.py
+        language: system
+        always_run: true
+        files: |
+          src/dataanalysistoolkit/__init__.py$
+          docs/source/conf.py
+          pyproject.toml

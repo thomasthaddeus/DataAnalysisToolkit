@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from dataanalysistoolkit.data_sources.excel_connector import ExcelConnector
+from dataanalysistoolkit.interfaces.excel_connector import ExcelConnector
 
 # Create a sample Excel file for testing
 @pytest.fixture(scope="module")

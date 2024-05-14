@@ -22,7 +22,7 @@
 # SOFTWARE.
 
 # Metadata about the package
-__version__ = '1.2.3'
+__version__ = '1.2.4'
 __author__ = 'Thaddeus Thomas'
 __email__ = 'thaddeus@vcwtech.com'
 
