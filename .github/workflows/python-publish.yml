@@ -54,6 +54,11 @@ jobs:
       id-token: write
 
     steps:
+      - name: Check version synchronization
+        run: |
+          python update_version.py
+          git diff --exit-code  # This will fail the step if any files are changed
+
       - name: Download all the dists
         uses: actions/download-artifact@v4
         with:
