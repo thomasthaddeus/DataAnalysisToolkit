@@ -30,6 +30,7 @@ class ReportGenerator:
 
     _extended_summary_
     """
+
     def __init__(self, data, columns=None):
         """
         Initializes the ReportGenerator with the dataset and optional specific
