@@ -77,7 +77,7 @@ tqdm = "4.66.4"
 typing_extensions = "4.11.0"
 tzdata = "2024.1"
 urllib3 = "2.2.1"
-zipp = "3.18.1"
+zipp = "3.19.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
