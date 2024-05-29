@@ -2,6 +2,8 @@ name: Auto Merge Dependabot PRs
 
 on:
   pull_request:
+    branches:
+      - main
     types:
       - opened
       - synchronize
@@ -17,13 +19,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-
-      - name: Merge Dependabot PRs
+      - name: Merge Dependabot PRs into dev
         run: |
-          gh pr merge ${{ github.event.pull_request.number }} --auto --merge --delete-branch
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout dev
+          git merge --no-ff ${{ github.event.pull_request.head.sha }}
+          git push origin dev
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
