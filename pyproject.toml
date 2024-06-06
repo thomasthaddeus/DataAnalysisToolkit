@@ -30,7 +30,7 @@ include = [ "tests/data/*.csv", "src/dataanalysistoolkit/.conf/*.json"]
 [tool.poetry.dependencies]
 python = "^3.9"
 # dataanalysistoolkit = {path = "../src/dataanalysistoolkit/", develop = true}
-certifi = "2024.2.2"
+certifi = "2024.6.2"
 charset-normalizer = "3.3.2"
 click = "8.1.7"
 colorama = "0.4.6"
