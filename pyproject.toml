@@ -76,7 +76,7 @@ threadpoolctl = "3.5.0"
 tqdm = "4.66.4"
 typing_extensions = "4.12.2"
 tzdata = "2024.1"
-urllib3 = "2.2.1"
+urllib3 = "2.2.2"
 zipp = "3.19.2"
 
 [tool.poetry.dev-dependencies]
