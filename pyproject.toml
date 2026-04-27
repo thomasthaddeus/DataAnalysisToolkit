@@ -75,7 +75,7 @@ SQLAlchemy = "2.0.31"
 threadpoolctl = "3.5.0"
 tqdm = "4.66.4"
 typing_extensions = "4.12.2"
-tzdata = "2026.1"
+tzdata = "2026.2"
 urllib3 = "2.6.3"
 zipp = "3.19.2"
 
