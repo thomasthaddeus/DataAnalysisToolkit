@@ -2850,14 +2850,14 @@ test = ["pytest"]
 
 [[package]]
 name = "sphinxcontrib-websupport"
-version = "1.2.7"
+version = "2.0.0"
 description = "sphinxcontrib-websupport provides a Python API to easily integrate Sphinx documentation into your Web application"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "sphinxcontrib_websupport-1.2.7-py3-none-any.whl", hash = "sha256:2dc179d7f821ebd54f31f93c894ca52435ebc5364e4e4dfb0da834ac119d51fd"},
-    {file = "sphinxcontrib_websupport-1.2.7.tar.gz", hash = "sha256:e322802ebfd5fe79368efd864aeb87b063566ae61911dccb2714e28a45ed7561"},
+    {file = "sphinxcontrib_websupport-2.0.0-py3-none-any.whl", hash = "sha256:365b4da67e03cc163dc4752ed44b3c4bc334172c8198102135a7eb7945111229"},
+    {file = "sphinxcontrib_websupport-2.0.0.tar.gz", hash = "sha256:0b7367d3bac6454b1f97e42aa8c4d4d4a1b756d525fc726ebbe5571e033e79cd"},
 ]
 
 [package.dependencies]
@@ -2866,7 +2866,7 @@ Sphinx = ">=5"
 sphinxcontrib-serializinghtml = "*"
 
 [package.extras]
-lint = ["docutils-stubs", "flake8", "mypy"]
+lint = ["mypy", "ruff (==0.5.5)", "types-docutils"]
 test = ["pytest"]
 whoosh = ["sqlalchemy", "whoosh"]
 
